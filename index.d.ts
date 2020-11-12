@@ -4,4 +4,10 @@ export interface JwtDecodeOptions {
   header?: boolean;
 }
 
-export default function jwtDecode(token: string, options?: JwtDecodeOptions): unknown;
+interface  jwtResponseType {
+  data: object,
+  iat: number,
+  exp: number,
+}
+
+export default function jwtDecode(token: string, options?: JwtDecodeOptions): jwtResponseType;
